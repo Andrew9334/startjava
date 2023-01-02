@@ -1,7 +1,7 @@
 public class VariablesTheme {
         
         public static void main(String[] args) {
-System.out.println("1. Вывод значений переменных на консоль");
+        System.out.println("1. Вывод значений переменных на консоль");
 
         byte numberOfCores = 4;
         short numberOfHardDrives = 2;

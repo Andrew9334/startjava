@@ -1,97 +1,112 @@
 public class VariablesTheme {
-	
-	public static void main(String[] args){
-		System.out.println("1. Вывод значений переменных на консоль");
+        
+        public static void main(String[] args) {
+System.out.println("1. Вывод значений переменных на консоль");
 
-		byte numberOfCores = 4;
+        byte numberOfCores = 4;
+        short numberOfHardDrives = 2;
+        int amountOfComputerMemory = 16384;
+        long videoCardMemory = 8192;
+        float windowsVersion = 10f;
+        double cpuClockSpeed = 4.2;
+        char amountOfCacheMemory = 'a';
+        boolean isComputer = true;
 
-		short numberOfHardDrives = 2; 
+        System.out.println("Number of cores = " + numberOfCores + "\n" +
+                "Number of hard drives = " + numberOfHardDrives + "\n" +
+                "Amount of computer memory = " + amountOfComputerMemory + "\n" +
+                "Video card memory = " + videoCardMemory + "\n" +
+                "Windows version -" + windowsVersion + "\n" +
+                "Cpu clock speed = " + cpuClockSpeed + "\n" +
+                "Amount of cache memory" + amountOfCacheMemory + "\n" +
+                "Is computer? - " + isComputer);
 
-		int amountOfComputerMemory = 16384;
+        System.out.println();
+        System.out.println("2. Расчет стоимости товара со скидкой");
 
-		long videoCardMemory = 8192;
+        int penCost = 100;
+        int bookCost = 200;
+        double discount = 0.11;
 
-		float windowsVersion = 10f; 
+        double amountOfCost = (double) (penCost + bookCost);
+        double discountAmount = amountOfCost * discount;
+        double amountOfDiscountedItems = amountOfCost - discountAmount;
+        System.out.println("Сумма скидки " + discountAmount);
+        System.out.println("Общая стоимость товаров со скидкой " + amountOfDiscountedItems);
 
-		double cpuClockSpeed = 4.2;
+        System.out.println();
+        System.out.println("3. Вывод слова JAVA");
 
-		char amountOfCacheMemory = 'a'; 
+        System.out.println("   J    a  v     v  a" + "\n" +
+                "   J   a a  v   v  a a" + "\n" +
+                "J  J  aaaaa  V V  aaaaa" + "\n" +
+                " JJ  a     a  V  a     a");
 
-		boolean isComputer = true; 
+        System.out.println();
+        System.out.println("4. Вывод min и max значений целых числовых типов");
 
-		System.out.println("Number of cores = " + numberOfCores + "\n" +
-				"Number of hard drives = " + numberOfHardDrives + "\n" + 
-				"Amount of computer memory = " + amountOfComputerMemory + "\n" + 
-				"Video card memory = " + videoCardMemory + "\n" + 
-				"Windows version -" + windowsVersion + "\n" + 
-				"Cpu clock speed = " + cpuClockSpeed + "\n" + 
-				"Amount of cache memory" + amountOfCacheMemory + "\n" + 
-				"Is computer? - " + isComputer);
+        byte numberOfByte = 127;
+        short numberOfShort = 32767;
+        int numberOfInteger = 2147483647;
+        long numberOfLong = 9223372036854775807L;
 
-		System.out.println("2. Расчет стоимости товара со скидкой");
+        System.out.println("Первоначальное значение numberOfByte = " + numberOfByte + "\n" +
+                "Первоначальное значение numberOfShort = " + numberOfShort + "\n" +
+                "Первоначальное значение numberOfInteger = " + numberOfInteger + "\n" +
+                "Первоначальное значение numberOfLong = " + numberOfLong);
 
-		int pen = 100;
-		int book = 200; 
-		double discount = 0.11; 
+        System.out.println("Значение после инкремента numberOfByte = " + (numberOfByte += 1) + "\n" +
+                "Значение после инкремента numberOfShort = " + (numberOfShort += 1) + "\n" +
+                "Значение после инкремента numberOfInteger = " + (numberOfInteger += 1) + "\n" +
+                "Значение после инкремента numberOfLong = " + (numberOfLong += 1));
 
-		double discountAmount = (double)(pen + book) * discount; 
-		double amountOfDiscountedItems = (double) (pen + book) - discountAmount; 
-		System.out.println(discountAmount);
-		System.out.println(amountOfDiscountedItems);
+        System.out.println("Значение после декремента numberOfByte = " + (numberOfByte -= 1) + "\n" +
+                "Значение после декремента numberOfShort = " + (numberOfShort -= 1) + "\n" +
+                "Значение после декремента numberOfInteger = " + (numberOfInteger -= 1) + "\n" +
+                "Значение после декремента numberOfLong = " + (numberOfLong -= 1));
 
-		System.out.println("3. Вывод слова JAVA");
+        System.out.println();
+        System.out.println("5. Перестановка значений переменных");
 
-		System.out.println("J    a  v     v  a" + "\n" +                                                 
-   							"J   a a  v   v  a a" + "\n" +                                               
-							"J  J  aaaaa  V V  aaaaa" + "\n" +                                                
- 							"JJ  a     a  V  a     a");
+        int firstNumber = 2;
+        int secondNumber = 5;
+        int tmp = firstNumber;
 
-		System.out.println("4. Вывод min и max значений целых числовых типов");
+        System.out.println("Исходные значения переменных: " + '\n' +
+                "firstNumber = " + firstNumber + '\n' +
+                "secondNumber = " + secondNumber);
 
-		byte b = 127; 
-		short s = 32767; 
-		int i = 2147483647;
-		long l = 9223372036854775807L;
+        System.out.println();
+        System.out.println("Перестановка значений переменных с помощью третьей переменной");
+        firstNumber = secondNumber;
+        secondNumber = tmp;
 
-		System.out.println("Первоначальное значение b = " + b + "\n" +
-				"Первоначальное значение s = " + s + "\n" +
-				"Первоначальное значение i = " + i + "\n" +
-				"Первоначальное значение l = " + l);
+        System.out.println("Новые значения переменных: " + '\n' +
+                "firstNumber = " + firstNumber + '\n' +
+                "secondNumber = " + secondNumber);
 
-		b++;
-		s++;
-		i++;
-		l++;
-		System.out.println("Значение после инкремента b = " + b + "\n" +
-				"Значение после инкремента s = " + s + "\n" +
-				"Значение после инкремента i = " + i + "\n" +
-				"Значение после инкремента l = " + l);
-		b--;
-		s--;
-		i--;
-		l--;
-		System.out.println("Значение после декремента b = " + b + "\n" +
-				"Значение после декремента s = " + s + "\n" +
-				"Значение после декремента i = " + i + "\n" +
-				"Значение после декремента l = " + l);
+        System.out.println();
+        System.out.println("Перестановка значений переменных с помощью арифметических операций");
+        firstNumber = firstNumber + secondNumber - (firstNumber = secondNumber);
 
-		System.out.println("5. Перестановка значений переменных");
+        System.out.println("Новые значения переменных: " + '\n' +
+                "firstNumber = " + firstNumber + '\n' +
+                "secondNumber = " + secondNumber);
 
-		int firstNumber = 2; 
-		int secondNumber = 5;
-		int tmp; 
+        System.out.println();
+        System.out.println("Перестановка значений переменных с помощью побитовой операции ^");
 
-		tmp = firstNumber;
-		firstNumber = secondNumber;
-		secondNumber = tmp;
+        firstNumber ^= secondNumber;
+        firstNumber ^= secondNumber;
+        secondNumber ^= firstNumber;
+        secondNumber ^= firstNumber;
 
-		firstNumber = firstNumber + secondNumber - (firstNumber = secondNumber); 
+        System.out.println("Новые значения переменных: " + '\n' +
+                "firstNumber = " + firstNumber + '\n' +
+                "secondNumber = " + secondNumber);
 
-		firstNumber ^= secondNumber;
-		secondNumber ^= firstNumber;
-		firstNumber ^= secondNumber; 
-
-		System.out.println("6. Вывод символов и их кодов");
+        System.out.println();
+        System.out.println("6. Вывод символов и их кодов");
         char c35 = '#';
         char c38 = '&';
         char c64 = '@';
@@ -103,34 +118,38 @@ public class VariablesTheme {
                 "94 - " + c94 + '\n' +
                 "95 - " + c95);
 
+        System.out.println();
         System.out.println("7. Вывод в консоль ASCII-арт Дюка");
-        char c1 = '/';
-        char c2 = '\\';
-        char c3 = '_';
-        char c4 = '(';
-        char c5 = ')';
+        char forwardSlash = '/';
+        char doubleBackSlash = '\\';
+        char underscore = '_';
+        char openParenthesis = '(';
+        char closeParenthesis = ')';
 
-        System.out.println("    " + c1 + c2 + '\n' +
-                "   " + c1 + "  " + c2 + '\n' +
-                "  " + c1 + c3 + c4 + " " + c5 + c2 + '\n' +
-                " " + c1 + "      " + c2 + '\n' +
-                c1 + c3 + c3 + c3 + c3 + c1 + c2 + c3 + c3 + c2);
-	    
-	    System.out.println("8. Вывод количества сотен, десятков и единиц числа");
+        System.out.println("    " + forwardSlash + doubleBackSlash + '\n' +
+                "   " + forwardSlash + "  " + doubleBackSlash + '\n' +
+                "  " + forwardSlash + underscore + openParenthesis + " " + closeParenthesis + doubleBackSlash + '\n' +
+                " " + forwardSlash + "      " + doubleBackSlash + '\n' +
+                forwardSlash + underscore + underscore + underscore + underscore + forwardSlash + doubleBackSlash + underscore + underscore + doubleBackSlash);
+
+        System.out.println();
+        System.out.println("8. Вывод количества сотен, десятков и единиц числа");
 
         int number = 123;
 
         int hundreds = number / 100;
-        int dozens = number / 10 % 10;
-        int units = number % 100 % 10;
-        int multiplication = hundreds * dozens * units;
-        int sum = hundreds + dozens + units;
-        System.out.println("Число 123 содержит: " + hundreds + " сотен\n"
-                + dozens + " десятков\n"
-                + units + " единиц" + '\n' +
-                "Сумма его цифр = " + sum + '\n' +
-                "Произведение = " + multiplication);
+        int tens = number / 10 % 10;
+        int ones = number % 100 % 10;
+        int multDigits = hundreds * tens * ones;
+        int sumDigits = hundreds + tens + ones;
+        System.out.println("Число 123 содержит: " + '\n' +
+                hundreds + " сотен\n"
+                + tens + " десятков\n"
+                + ones + " единиц\n" +
+                "Сумма его цифр = " + sumDigits + '\n' +
+                "Произведение = " + multDigits);
 
+        System.out.println();
         System.out.println("9. Вывод времени");
 
         int time = 86399;
@@ -139,5 +158,5 @@ public class VariablesTheme {
         int minutes = time % 3600 / 60;
         int seconds = time % 60 ;
         System.out.println(hours + ":" + minutes + ":" + seconds);
-	}
+        }
 }

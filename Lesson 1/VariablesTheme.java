@@ -71,8 +71,7 @@ public class VariablesTheme {
             "firstNumber = " + firstNumber + '\n' +
             "secondNumber = " + secondNumber);
 
-    System.out.println();
-    System.out.println("Перестановка значений переменных с помощью третьей переменной");
+    System.out.println("\nПерестановка значений переменных с помощью третьей переменной");
     firstNumber = secondNumber;
     secondNumber = tmp;
 
@@ -100,6 +99,7 @@ public class VariablesTheme {
             "secondNumber = " + secondNumber);
 
     System.out.println("\n6. Вывод символов и их кодов");
+
     char sharp = '#';
     char ampersand = '&';
     char dog = '@';
@@ -110,6 +110,7 @@ public class VariablesTheme {
     int codeDog = (int) dog;
     int codeCaret = (int) caret;
     int codeUnderscore = (int) underscore;
+    
     System.out.println(sharp + " - " + codeSharp + '\n' +
             ampersand + " - " + codeAmpersand + '\n' +
             dog + " - " + codeDog + '\n' +
@@ -117,6 +118,7 @@ public class VariablesTheme {
             underscore + " - " + codeUnderscore);
 
     System.out.println("\n7. Вывод в консоль ASCII-арт Дюка");
+
     char slash = '/';
     char backSlash = '\\';
     char underscore1 = '_';
@@ -147,6 +149,7 @@ public class VariablesTheme {
             "Произведение = " + multDigits);
 
     System.out.println("\nT9. Вывод времени");
+
     int time = 86399;
 
     int hours = time / 3600;

@@ -104,11 +104,11 @@ public class VariablesTheme {
         char caret = '^';
         char underscore = '_';
         
-        System.out.println(sharp + " - " + (int)sharp + '\n' +
-                ampersand + " - " + (int)ampersand + '\n' +
-                at + " - " + (int)at + '\n' +
-                caret + " - " + (int)caret + '\n' +
-                underscore + " - " + (int)underscore);
+        System.out.println(sharp + " - " + (int) sharp + '\n' +
+                ampersand + " - " + (int) ampersand + '\n' +
+                at + " - " + (int) at + '\n' +
+                caret + " - " + (int) caret + '\n' +
+                underscore + " - " + (int) underscore);
 
         System.out.println("\n7. Вывод в консоль ASCII-арт Дюка");
         char slash = '/';

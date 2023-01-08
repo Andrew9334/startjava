@@ -1,6 +1,8 @@
+import java.text.DecimalFormat;
+
 public class IfElseStatementTheme {
     public static void main(String[] args) {
-        System.out.println("1. Перевод псевдокода на язык Java");
+        System.out.println("\n1. Перевод псевдокода на язык Java");
 
         int age = 10;
         String maleGender = "male";
@@ -12,7 +14,7 @@ public class IfElseStatementTheme {
             System.out.println("Возраст меньше 20 лет");
         }
 
-        if (!(maleGender == "male")) {
+        if (maleGender != "male") {
             System.out.println("Это женщина");
         } else {
             System.out.println("Это мужчина");
@@ -24,7 +26,7 @@ public class IfElseStatementTheme {
             System.out.println("Ваш рост больше 1.80 метра");
         }
 
-        char firstLetterName = firstLetterName = "Maxim".charAt(0);
+        char firstLetterName = "Maxim".charAt(0);
 
         if (firstLetterName == 'M') {
             System.out.println("Первая буква вашего имени - М");
@@ -49,53 +51,50 @@ public class IfElseStatementTheme {
 
         System.out.println("\n3. Проверка числа");
 
-        int number = 10; 
+        int num3 = 10;
 
-        if (number == 0) {
+        if (num3 == 0) {
             System.out.println("Число является нулем");
         } else {
-            if (number % 2 == 0) {
-                System.out.println(number + " - четное число");
+            if (num3 % 2 == 0) {
+                System.out.println(num3 + " - четное число");
             } else {
-                System.out.println(number + " - нечетное число");
+                System.out.println(num3 + " - нечетное число");
             }
-            if (number < 0) {
-                System.out.println(number + " - нечетное число");
+            if (num3 < 0) {
+                System.out.println(num3 + " - нечетное число");
             } else {
-                System.out.println(number + " - положительное число");
+                System.out.println(num3 + " - положительное число");
             }
         }
 
         System.out.println("\n4. Поиск одинаковых цифр в числах");
 
-        int number1 = 152;
-        int number2 = 152;
-        int hundredsNumber1 = number1 / 100;
-        int hundredsNumber2 = number2 / 100;
-        int tensNumber1 = number1 / 10 % 10;
-        int tensNumber2 = number2 / 10 % 10;
-        int onesNumber1 = number1 % 100 % 10;
-        int onesNumber2 = number2 % 100 % 10;
+        int num4 = 152;
+        int num5 = 152;
+        int hundredsNum4 = num4 / 100;
+        int hundredsNum5 = num5 / 100;
+        int tensNum4 = num4 / 10 % 10;
+        int tensNum5 = num5 / 10 % 10;
+        int onesNum4 = num4 % 10;
+        int onesNum5 = num5 % 10;
 
-        System.out.println("Исходные числа: " + number1 + ", " + number2);
+        System.out.println("Исходные числа: " + num4 + ", " + num5);
 
-        if (hundredsNumber1 == hundredsNumber2) {
-            System.out.println("Одинаковые в них цифры: " + 
-                    hundredsNumber1 + ", " + hundredsNumber2 + '\n' +
+        if (hundredsNum4 == hundredsNum5) {
+            System.out.println("Одинаковые в них цифры: " + hundredsNum4 + ", " + hundredsNum5 + '\n' +
                     "Номера разрядов - сотни");
         }
-        if (tensNumber1 == tensNumber2) {
-            System.out.println("Одинаковые в них цифры: " + 
-                    tensNumber1 + ", " + tensNumber2 + '\n' +
+        if (tensNum4 == tensNum5) {
+            System.out.println("Одинаковые в них цифры: " + tensNum4 + ", " + tensNum5 + '\n' +
                     "Номера разрядов - десятки");
         }
-        if (onesNumber1 == onesNumber2) {
-            System.out.println("Одинаковые в них цифры: " + 
-                    onesNumber1 + ", " + onesNumber2 + '\n' +
+        if (onesNum4 == onesNum5) {
+            System.out.println("Одинаковые в них цифры: " + onesNum4 + ", " + onesNum5 + '\n' +
                     "Номера разрядов - единицы");
         }
-        if (hundredsNumber1 != hundredsNumber2 && tensNumber1 != tensNumber2 && onesNumber1 != onesNumber2) {
-        System.out.println("Равных чисел нет");
+        if (hundredsNum4 != hundredsNum5 && tensNum4 != tensNum5 && onesNum4 != onesNum5) {
+            System.out.println("Равных чисел нет");
         }
 
         System.out.println("\n5. Определение символа по его коду");
@@ -106,7 +105,7 @@ public class IfElseStatementTheme {
             System.out.println("маленькая буква - " + searchSymbol);
         } else if (searchSymbol >= 'A' && searchSymbol <= 'Z') {
             System.out.println("большая буква - " + searchSymbol);
-        } else if (searchSymbol >= 0 && searchSymbol <= 9) {
+        } else if (searchSymbol >= '0' && searchSymbol <= '9') {
             System.out.println("число - " + searchSymbol);
         } else {
             System.out.println(searchSymbol + " - не число и не буква");
@@ -115,28 +114,28 @@ public class IfElseStatementTheme {
         System.out.println("\n6. Подсчет суммы вклада и начисленных банком %");
 
         int depositAmount = 300000;
-        double percent = 0.05;
+        double percent;
 
         if (depositAmount >= 100000 && depositAmount <= 300000) {
-            percent = (int) (depositAmount * 0.07);
+            percent = 0.07;
         } else if (depositAmount > 300000) {
-            percent = (int) (depositAmount * 0.1);
+            percent = 0.1;
         } else {
-            percent = depositAmount * percent;
+            percent = 0.05;
         }
+        percent = depositAmount * percent;
+        String percentDouble = new DecimalFormat("#0.0").format(percent);
 
         System.out.println("Сумма вклада - " + depositAmount + '\n' +
-                "Начисленны процент - " + (int) percent + '\n' +
-                "Итоговая сумма - " + (depositAmount + (int) percent));
+                "Начисленны процент - " + percentDouble + '\n' +
+                "Итоговая сумма - " + (depositAmount + percent));
 
         System.out.println("\n7. Определение оценки по предметам");
-        
+
         int historyPercent = 59;
         int csPercent = 91;
         double gradleOfHistory = 5;
         double gradleOfProgramming = 5;
-        double avgGrades;
-        double avgPercent;
 
         if (historyPercent > 73 && historyPercent <= 91) {
             gradleOfHistory = 4;
@@ -147,23 +146,22 @@ public class IfElseStatementTheme {
         }
 
         if (csPercent > 73 && csPercent <= 91) {
-        gradleOfProgramming = 4;
+            gradleOfProgramming = 4;
         } else if (csPercent > 60 && csPercent <= 73) {
-        gradleOfProgramming = 3;
+            gradleOfProgramming = 3;
         } else if (csPercent <= 60) {
-        gradleOfProgramming = 2;
+            gradleOfProgramming = 2;
         }
 
-        avgGrades =(gradleOfHistory + gradleOfProgramming) / 2;
-        avgPercent =(historyPercent +csPercent) / 2;
+        double avgGrades = (gradleOfHistory + gradleOfProgramming) / 2;
+        double avgPercent = (historyPercent +csPercent) / 2;
 
         System.out.println(gradleOfHistory + "- history" + '\n' +
-                gradleOfProgramming + "- programming" + '\n' +
-                "Средний балл оценок по предметам - " + avgGrades + '\n' +
-                "Средний % по предметам - " + avgPercent);
+                    gradleOfProgramming + "- programming" + '\n' +
+                    "Средний балл оценок по предметам - " + avgGrades + '\n' +
+                    "Средний % по предметам - " + avgPercent);
 
-
-        System.out.println("\n8. Расчет прибыли за год");
+            System.out.println("\n8. Расчет прибыли за год");
 
         int rent = 5000;
         int revenue = 13000;
@@ -171,7 +169,7 @@ public class IfElseStatementTheme {
         int annualProfit = (revenue - rent - costPrice) * 12;
 
         if (annualProfit > 0) {
-            System.out.println("Прибыль за год +" +  annualProfit);
+            System.out.println("Прибыль за год +"  + annualProfit);
         } else {
             System.out.println("Прибыль за год " + annualProfit);
         }
@@ -179,102 +177,78 @@ public class IfElseStatementTheme {
         System.out.println("\n9. Подсчет количества банкнот");
 
         int requiredAmount = 576;
-        int oneBanknote = 50;
-        int tenBanknote = 5;
-        int oneHundredBanknote = 10;
-        int result = 0;
-        int oneHundredBanknoteDenomination = 100;
-        int tenBanknoteDenomination = 10;
-        int oneBanknoteDenomination = 1;
+        int Banknote1 = 50;
+        int Banknote10 = 5;
+        int Banknote100 = 10;
+        int Denomination100 = 100;
+        int Denomination10 = 10;
+        int Denomination1 = 1;
 
-        int onesOfTheRequiredQuantity = requiredAmount % 100 % 10;
-        int tensOfTheRequiredQuantity = requiredAmount / 10 % 10;
-        int hundredsOfTheRequiredQuantity = requiredAmount / 100;
+        int RequiredQuantity1 = requiredAmount % 10;
+        int RequiredQuantity10 = requiredAmount / 10 % 10;
+        int RequiredQuantity100 = requiredAmount / 100;
 
-        if (hundredsOfTheRequiredQuantity < oneHundredBanknote) {
-            int resultHundreds = hundredsOfTheRequiredQuantity;
-            System.out.println("Номинал банкноты - " + oneHundredBanknoteDenomination + ". "
-                    + "Необходимое количество банкнот - " + resultHundreds + ". " +
+        if (RequiredQuantity100 < Banknote100 && RequiredQuantity10 < Banknote10 && RequiredQuantity1 < Banknote1) {
+            int result100 = RequiredQuantity100;
+            int result10 = RequiredQuantity10;
+            int result1 = RequiredQuantity1;
+            System.out.println("Номинал банкноты - " + Denomination100 + ". "
+                    + "Необходимое количество банкнот - " + result100 + ". " +
+                    "Выдаваемая сумма - " + requiredAmount + '\n' +
+                    "Номинал банкноты - " + Denomination10 + ". " +
+                    "Необходимое количество банкнот - " + result10 + ". " +
+                    "Выдаваемая сумма - " + requiredAmount + '\n' +
+                    "Номинал банкноты - " + Denomination1 + ". " +
+                    "Необходимое количество банкнот - " + result1 + ". " +
                     "Выдаваемая сумма - " + requiredAmount);
-        } else if (hundredsOfTheRequiredQuantity == oneHundredBanknote) {
-            int resultHundreds = hundredsOfTheRequiredQuantity;
-            System.out.println("Номинал банкноты - " + oneHundredBanknoteDenomination + ". " +
-                    "Необходимое количество банкнот - " + resultHundreds + ". " +
+        } else if (RequiredQuantity100 < Banknote100 && RequiredQuantity10 > Banknote10 &&
+                RequiredQuantity1 < Banknote1) {
+            int result100 = RequiredQuantity100;
+            int result10 = Banknote10 + Banknote1;
+            int result1 = RequiredQuantity1;
+            System.out.println("Номинал банкноты - " + Denomination100 + ". "
+                    + "Необходимое количество банкнот - " + result100 + ". " +
+                    "Выдаваемая сумма - " + requiredAmount + '\n' +
+                    "Номинал банкноты - " + Denomination10 + ". " +
+                    "Необходимое количество банкнот - " + (result10 - (result10 - RequiredQuantity10)) + ". " +
+                    "Выдаваемая сумма - " + requiredAmount + '\n' +
+                    "Номинал банкноты - " + Denomination1 + ". " +
+                    "Необходимое количество банкнот - " + result1 + ". " +
                     "Выдаваемая сумма - " + requiredAmount);
-        } else if (hundredsOfTheRequiredQuantity > oneHundredBanknote) {
-            result = oneHundredBanknote + tenBanknote;
-                if (result > hundredsOfTheRequiredQuantity) {
-                    System.out.println("Номинал банкноты - " + oneHundredBanknoteDenomination + ". " +
-                            "Необходимое количество банкнот - " + (result - (result - hundredsOfTheRequiredQuantity)) + ". " +
-                            "Выдаваемая сумма - " + requiredAmount);
-                } else if (result == hundredsOfTheRequiredQuantity) {
-                    System.out.println("Номинал банкноты - " + oneHundredBanknoteDenomination + ". " +
-                            "Необходимое количество банкнот - " + result + ". " +
-                            "Выдаваемая сумма - " + requiredAmount);
-                } else if (result < hundredsOfTheRequiredQuantity) {
-                    result += oneBanknote;
-                    if (result > hundredsOfTheRequiredQuantity) {
-                        System.out.println("Номинал банкноты - " + oneHundredBanknoteDenomination +". "  +
-                                (result - (result - hundredsOfTheRequiredQuantity)) +
-                                "Необходимое количество банкнот - " + result + ". " +
-                                "Выдаваемая сумма - " + requiredAmount);
-                    } else if(result == hundredsOfTheRequiredQuantity) {
-                        System.out.println("Номинал банкноты - " + oneHundredBanknoteDenomination + ". " +
-                                "Необходимое количество банкнот - " + result + ". " +
-                                "Выдаваемая сумма - " + requiredAmount);
-                    } else {
-                        System.out.println("В банкомате недостаточно денег");
-                    }
-                }
-        }
-
-        if (tensOfTheRequiredQuantity < tenBanknote) {
-            int resultTens = tensOfTheRequiredQuantity;
-            System.out.println("Номинал банкноты - " + tenBanknoteDenomination + ". " +
-                    "Необходимое количество банкнот - " + resultTens + ". " +
+        } else if (RequiredQuantity100 == Banknote100 && RequiredQuantity10 == Banknote10 &&
+                RequiredQuantity1 == Banknote1) {
+            int result100 = RequiredQuantity100;
+            int result10 = RequiredQuantity10;
+            int result1 = RequiredQuantity1;
+            System.out.println("Номинал банкноты - " + Denomination100 + ". " +
+                    "Необходимое количество банкнот - " + result100 + ". " +
+                    "Выдаваемая сумма - " + requiredAmount + '\n' +
+                    "Номинал банкноты - " + Denomination10 + ". " +
+                    "Необходимое количество банкнот - " + result10 + ". " +
+                    "Выдаваемая сумма - " + requiredAmount + '\n' +
+                    "Номинал банкноты - " + Denomination1 + ". " +
+                    "Необходимое количество банкнот - " + result1 + ". " +
                     "Выдаваемая сумма - " + requiredAmount);
-        } else if (tensOfTheRequiredQuantity == tenBanknote) {
-            int resultTens = hundredsOfTheRequiredQuantity;
-            System.out.println("Номинал банкноты - " + tenBanknoteDenomination + ". " +
-                    "Необходимое количество банкнот - " + resultTens + ". " +
-                    "Выдаваемая сумма - " + requiredAmount);
-        } else if (tensOfTheRequiredQuantity > tenBanknote) {
-            result = tenBanknote + oneBanknote;
-            if (result > tensOfTheRequiredQuantity) {
-                System.out.println("Номинал банкноты - " + tenBanknoteDenomination + ". " +
-                        "Необходимое количество банкнот - " + (result - (result -tensOfTheRequiredQuantity)) + ". " +
+        } else if (RequiredQuantity100 > Banknote100 && RequiredQuantity10 > Banknote10 &&
+                RequiredQuantity1 < Banknote1) {
+            int result100 = Banknote100 + Banknote10;
+            int result10 = Banknote10 + Banknote1;
+            int result1 = RequiredQuantity1;
+            if (result100 > RequiredQuantity100 && result10 > RequiredQuantity10) {
+                System.out.println("Номинал банкноты - " + Denomination100 + ". " +
+                        "Необходимое количество банкнот - " + (result100 - (result100 - RequiredQuantity100)) + ". " +
+                        "Выдаваемая сумма - " + requiredAmount + '\n' +
+                        "Номинал банкноты - " + Denomination10 + ". " +
+                        "Необходимое количество банкнот - " + (result10 - (result10 - RequiredQuantity10)) + ". " +
+                        "Выдаваемая сумма - " + requiredAmount + '\n' +
+                        "Номинал банкноты - " + Denomination1 + ". " +
+                        "Необходимое количество банкнот - " + result1 + ". " +
                         "Выдаваемая сумма - " + requiredAmount);
-            } else if(result == tensOfTheRequiredQuantity) {
-                System.out.println("Номинал банкноты - " + tenBanknoteDenomination + ". " +
-                        "Необходимое количество банкнот - " + result + ". " +
-                        "Выдаваемая сумма - " + requiredAmount);
-            } else if (result < tensOfTheRequiredQuantity) {
-                result += oneBanknote;
-                if (result > tensOfTheRequiredQuantity) {
-                    System.out.println("Номинал банкноты - " + tenBanknoteDenomination + ". " +
-                            "Необходимое количество банкнот - " + (result - (result - tensOfTheRequiredQuantity)) + ". " +
-                            "Выдаваемая сумма - " + requiredAmount);
-                } else if (result == tensOfTheRequiredQuantity) {
-                    System.out.println("Номинал банкноты - " + tenBanknoteDenomination + ". " +
-                            "Необходимое количество банкнот - " + result + ". " +
-                            "Выдаваемая сумма - " + requiredAmount);
-                } else {
-                    System.out.println("В банкомате недостаточно денег");
-                }
             }
-        }
-
-        if (onesOfTheRequiredQuantity < oneBanknote) {
-            int resultOnes = onesOfTheRequiredQuantity;
-            System.out.println("Номинал банкноты - " + oneBanknoteDenomination + ". " +
-                    "Необходимое количество банкнот - " + resultOnes + ". " +
-                    "Выдаваемая сумма - " + requiredAmount);
-        } else if (onesOfTheRequiredQuantity == oneBanknote) {
-            int resultOnes = onesOfTheRequiredQuantity;
-            System.out.println("Номинал банкноты - " + oneBanknoteDenomination + ". " +
-                    "Необходимое количество банкнот - " + resultOnes + ". " +
-                    "Выдаваемая сумма - " + requiredAmount);
-        } else if (onesOfTheRequiredQuantity > oneBanknote) {
+        } else if (RequiredQuantity100 > Banknote100 && RequiredQuantity10 > Banknote10 &&
+                RequiredQuantity1 > Banknote1 || RequiredQuantity100 == Banknote100 && RequiredQuantity10 == Banknote10
+                && RequiredQuantity1 > Banknote1 || RequiredQuantity100 == Banknote100 &&
+                RequiredQuantity10 > Banknote10 && RequiredQuantity1 > Banknote1) {
             System.out.println("В банкомате недостаточно денег");
         }
     }    

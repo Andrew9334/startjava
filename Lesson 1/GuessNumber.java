@@ -10,13 +10,13 @@ public class GuessNumber {
                     playerNumber += playerNumber / 2;
                     if (playerNumber < guessNumber) {
                         System.out.println("Число " + playerNumber + " меньше того, что загадал компьютер");
-                        while (playerNumber != guessNumber){
+                        while (playerNumber != guessNumber) {
                             playerNumber++;
                         }
                     }
                     if (playerNumber > guessNumber) {
                         System.out.println("Число " + playerNumber + " больше того, что загадал компьютер");
-                        while (playerNumber != guessNumber){
+                        while (playerNumber != guessNumber) {
                             playerNumber--;
                         }
                     }
@@ -29,13 +29,13 @@ public class GuessNumber {
                     playerNumber -= playerNumber / 2;
                     if (playerNumber < guessNumber) {
                         System.out.println("Число " + playerNumber + " меньше того, что загадал компьютер");
-                        while (playerNumber != guessNumber){
+                        while (playerNumber != guessNumber) {
                             playerNumber++;
                         }
                     }
                     if (playerNumber > guessNumber) {
                         System.out.println("Число " + playerNumber + " больше того, что загадал компьютер");
-                        while (playerNumber != guessNumber){
+                        while (playerNumber != guessNumber) {
                             playerNumber--;
                         }
                     }

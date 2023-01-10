@@ -1,9 +1,11 @@
 public class GuessNumber {
     public static void main(String[] args) {
         int guessNumber = 10;
-        int playerNumber = 50;
+        int min = 0;
+        int max = 100;
+        int playerNumber = max / 2;
 
-        if (guessNumber > 0 && guessNumber <= 100) {
+        if (guessNumber > min && guessNumber <= max) {
             while (true) {
                 if (playerNumber < guessNumber) {
                     System.out.println("Число " + playerNumber + " меньше того, что загадал компьютер");
@@ -11,13 +13,13 @@ public class GuessNumber {
                     if (playerNumber < guessNumber) {
                         System.out.println("Число " + playerNumber + " меньше того, что загадал компьютер");
                         while (playerNumber != guessNumber) {
-                            playerNumber++;
+                            System.out.println("Число " + ++playerNumber + " меньше того, что загадал компьютер");
                         }
                     }
                     if (playerNumber > guessNumber) {
                         System.out.println("Число " + playerNumber + " больше того, что загадал компьютер");
                         while (playerNumber != guessNumber) {
-                            playerNumber--;
+                            System.out.println("Число " + --playerNumber + " больше того, что загадал компьютер");
                         }
                     }
                     if (playerNumber == guessNumber) {
@@ -30,13 +32,13 @@ public class GuessNumber {
                     if (playerNumber < guessNumber) {
                         System.out.println("Число " + playerNumber + " меньше того, что загадал компьютер");
                         while (playerNumber != guessNumber) {
-                            playerNumber++;
+                            System.out.println("Число " + ++playerNumber + " меньше того, что загадал компьютер");
                         }
                     }
                     if (playerNumber > guessNumber) {
                         System.out.println("Число " + playerNumber + " больше того, что загадал компьютер");
                         while (playerNumber != guessNumber) {
-                            playerNumber--;
+                            System.out.println("Число " + --playerNumber + " больше того, что загадал компьютер");
                         }
                     }
                     if (playerNumber == guessNumber) {

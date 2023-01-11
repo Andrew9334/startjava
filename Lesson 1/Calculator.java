@@ -1,28 +1,33 @@
 public class Calculator {
     public static void main(String[] args) {
-        int num1 = 24;
+        int num1 = 4;
         int num2 = 14;
-        String sign = "^";
+        int powValue = 3;
+        char sign = '^';
         int result = 0;
+        int count = 3;
+        int resultPow = 1;
 
-        if (sign == "+") {
+        if (sign == '+') {
             result = num1 + num2;
-        } else if (sign == "-") {
+        } else if (sign == '-') {
             result = num1 - num2;
-        } else if (sign == "*") {
+        } else if (sign == '*') {
             result = num1 * num2;
-        } else if (sign == "/") {
+        } else if (sign == '/') {
             result = num1 / num2;
-        } else {
+        } else if (sign == '%') {
             result = num1 % num2;
         }
 
-        for(int i = 0; i < 1; i++) {
-            if(sign == "^") {
-                result = num1 * num1;
+        if (sign == '^') {
+            while (count != 0) {
+                resultPow = resultPow * num1;
+                count--;
             }
+            System.out.println(num1 + " " + sign + ' ' + powValue + " " + " = " + resultPow);
+        } else {
+            System.out.println(num1 + " " + sign + ' ' + num2 + " " + " = " + result);
         }
-        
-        System.out.println(num1 + " " + sign + ' ' + num1 + " " + " = " + result);
     }
 }

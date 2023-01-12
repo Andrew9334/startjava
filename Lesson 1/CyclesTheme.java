@@ -74,7 +74,7 @@ public class CyclesTheme {
         int num7 = 3242592;
         int count2 = 0;
 
-        while (num7 != 0){
+        while (num7 != 0) {
             int digit = num7 % 10;
             if (digit == 2) {
                 count2 += 1;
@@ -83,7 +83,7 @@ public class CyclesTheme {
         }
 
         num7 = 3242592;
-        if (count2 % 2 == 0){
+        if (count2 % 2 == 0) {
             System.out.println("Число " + num7 + " содержит " + count2 + " (четное) количество двоек");
         } else{
             System.out.println("Число " + num7 + " содержит " + count2 + " (нечетное) количество двоек");

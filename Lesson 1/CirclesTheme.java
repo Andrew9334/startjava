@@ -1,22 +1,18 @@
 public class CirclesTheme {
     public static void main(String[] args) {
         System.out.println("1. Подсчет суммы четных и нечетных чисел");
-        int num = -10;
+        int counter = -10;
         int sumOdd = 0;
         int sumEven = 0;
 
         do {
-            if (num % 2 == 0 && num < 0) {
-                sumOdd = sumOdd + num * (-1);
-            } else if (num % 2 == 0 && num > 0) {
-                sumOdd = sumOdd + num;
-            } else if (num % 2 != 0 && num < 0) {
-                sumEven = sumEven + num * (-1);
-            } else if (num % 2 != 0) {
-                sumEven = sumEven + num;
+            if (counter % 2 == 0) {
+                sumOdd += counter;
+            } else if (counter % 2 != 0) {
+                sumEven += counter;
             }
-            num++;
-        } while (-10 <= num & num <= 21);
+            counter++;
+        } while (-10 <= counter & counter <= 21);
 
         System.out.println("В промежутке [-10, 21] сумма четных чисел = " + sumOdd + ", а нечетных = " + sumEven);
 
@@ -28,48 +24,32 @@ public class CirclesTheme {
         int min = 0;
         int max = 0;
 
-        if (num1 > num2 && num1 > num3) {
+        if (num1 > num2 && num1 > num3 && num2 > num3) {
             max = num1;
-        } else if (num1 < num2 && num1 < num3) {
-            min = num1;
-        }
-        if (num2 > num1 && num2 > num3) {
-            max = num2;
-        } else if (num2 < num1 && num2 < num3) {
-            min = num2;
-        }
-        if (num3 > num1 && num3 > num1) {
-            max = num3;
-        } else if (num3 < num1 && num3 < num2) {
             min = num3;
+        } else {
+            max = num2;
         }
 
         System.out.println("Интервал между " + '(' + max + ',' + min + ')' + ':');
-        for (int i = (max - 1); max > i && i > min; i--) {
+        for (int i = (max - 1); i > min; i--) {
             System.out.print(i + " ");
         }
 
         System.out.println("\n\n3. Вывод реверсивного числа и суммы его цифр");
 
         int num4 = 1234;
-        int thousandths = 0;
-        int hundreds = 0;
-        int dozen = 0;
-        int one = 0;
+        int reversed = 0;
         int sum = 0;
-        int count = 0;
 
-        while (count < 1) {
-            thousandths = num4 / 1000 % 100;
-            hundreds = num4 / 100 % 10;
-            dozen = num4 / 10 % 10;
-            one = num4 % 10;
-            sum = thousandths + hundreds + dozen + one;
-            count++;
+        while (num4 != 0) {
+            int digit = num4 % 10;
+            reversed = reversed * 10 + digit;
+            sum += digit;
+            num4 /= 10;
         }
 
-        System.out.println("Исходное число в обратном порядке - " + one +
-                dozen + hundreds + thousandths);
+        System.out.println("Исходное число в обратном порядке - " + reversed);
         System.out.println("Сумма цифр числа = " + sum);
 
         System.out.println("\n4. Вывод чисел на консоль в несколько строк");
@@ -81,7 +61,7 @@ public class CirclesTheme {
             count1++;
             if (count1 == 5) {
                 count1 = 0;
-                System.out.println('\n');
+                System.out.print('\n');
             }
             if (i == (max1 - 1)) {
                 for (int j = 0; j < (5 - count1); j++) {
@@ -91,24 +71,22 @@ public class CirclesTheme {
         }
 
         System.out.println("\n\n5. Проверка количества двоек на четность/нечетность");
-
-        int num6 = 3242592;
-        String num7 = String.valueOf(num6);
-        char checkNum = '2';
+        int num7 = 3242592;
         int count2 = 0;
 
-        for (int i = 0; i < num7.length(); i++) {
-            if (num7.charAt(i) == checkNum) {
-                count2++;
+        while (num7 != 0){
+            int digit = num7 % 10;
+            if (digit == 2) {
+                count2 += 1;
             }
+            num7 /= 10;
         }
 
-        if (count1 % 2 == 0) {
-            System.out.println("Число " + num6 + " содержит " + count1 +
-                    " (четное) количество двоек");
-        } else {
-            System.out.println("Число " + num6 + " содержит " + count1 +
-                    " (нечетное) количество двоек");
+        num7 = 3242592;
+        if (count2 % 2 == 0){
+            System.out.println("Число " + num7 + " содержит " + count2 + " (четное) количество двоек");
+        } else{
+            System.out.println("Число " + num7 + " содержит " + count2 + " (нечетное) количество двоек");
         }
 
         System.out.println("\n6. Отображение фигур в консоли");

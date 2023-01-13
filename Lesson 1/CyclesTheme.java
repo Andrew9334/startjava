@@ -60,17 +60,17 @@ public class CyclesTheme {
         System.out.println("\n4. Вывод чисел на консоль в несколько строк");
         int num5 = 1;
         int max5 = 24;
-        int count1 = 0;
+        int count5 = 0;
 
         for (int i = num5; i < max5; i += 2) {
             System.out.printf("%4d", i);
-            count1++;
-            if (count1 == 5) {
-                count1 = 0;
+            count5++;
+            if (count5 == 5) {
+                count5 = 0;
                 System.out.println();
             }
         }
-        for (int j = num5; j <= (5 - count1); j++) {
+        for (int j = num5; j <= (5 - count5); j++) {
             System.out.printf("%4d", 0);
         }
 

@@ -6,18 +6,16 @@ public class GuessNumber {
         int playerNumber = 1;
 
         if (guessNumber > min && guessNumber <= max) {
-            while (true) {
+            while (playerNumber != guessNumber) {
                 if (playerNumber < guessNumber) {
                     System.out.println("Число " + playerNumber + " меньше того, что загадал компьютер");
                     playerNumber++;
                 } else if (playerNumber > guessNumber) {
                     System.out.println("Число " + playerNumber + " больше того, что загадал компьютер");
                     playerNumber--;
-                } else {
-                    System.out.println("Вы победили!");
-                    break;
                 }
             }
         }
+        System.out.println("Вы победили!");
     }
 }

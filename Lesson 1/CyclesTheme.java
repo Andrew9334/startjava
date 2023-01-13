@@ -12,23 +12,29 @@ public class CyclesTheme {
                 sumEven += counter;
             }
             counter++;
-        } while (-10 <= counter & counter <= 21);
+        } while (counter <= 21);
 
         System.out.println("В промежутке [-10, 21] сумма четных чисел = " + sumOdd + ", а нечетных = " + sumEven);
 
         System.out.println("\n2. Вывод чисел в интервале (min и max) в порядке убывания");
 
-        int num1 = 10;
-        int num2 = 5;
-        int num3 = -1;
-        int min = 0;
-        int max = 0;
+        int num1 = 5;
+        int num2 = -1;
+        int num3 = 10;
+        int min = num3;
+        int max = num1;
 
-        if (num1 > num2 && num1 > num3 && num2 > num3) {
-            max = num1;
-            min = num3;
-        } else {
+        if (num2 > max) {
             max = num2;
+        }
+        if (num3 > max) {
+            max = num3;
+        }
+        if (num1 < min) {
+            min = num1;
+        }
+        if (num2 < min) {
+            min = num2;
         }
 
         System.out.println("Интервал между " + '(' + max + ',' + min + ')' + ':');
@@ -43,50 +49,46 @@ public class CyclesTheme {
         int sum = 0;
 
         while (num4 != 0) {
-            int digit = num4 % 10;
-            reversed = reversed * 10 + digit;
-            sum += digit;
+            reversed = (reversed * 10) + num4 % 10;
+            sum += reversed % 10;
             num4 /= 10;
         }
 
-        System.out.println("Исходное число в обратном порядке - " + reversed);
-        System.out.println("Сумма цифр числа = " + sum);
+        System.out.println("Исходное число в обратном порядке - " + reversed + '\n' +
+                "Сумма цифр числа = " + sum);
 
         System.out.println("\n4. Вывод чисел на консоль в несколько строк");
         int num5 = 1;
-        int max1 = 24;
+        int max5 = 24;
         int count1 = 0;
-        for (int i = num5; i < max1; i += 2) {
+
+        for (int i = num5; i < max5; i += 2) {
             System.out.printf("%4d", i);
             count1++;
             if (count1 == 5) {
                 count1 = 0;
-                System.out.print('\n');
+                System.out.println();
             }
-            if (i == (max1 - 1)) {
-                for (int j = 0; j < (5 - count1); j++) {
-                    System.out.printf("%4d", 0);
-                }
-            }
+        }
+        for (int j = num5; j <= (5 - count1); j++) {
+            System.out.printf("%4d", 0);
         }
 
         System.out.println("\n\n5. Проверка количества двоек на четность/нечетность");
-        int num7 = 3242592;
-        int count2 = 0;
 
-        while (num7 != 0) {
-            int digit = num7 % 10;
-            if (digit == 2) {
-                count2 += 1;
+        int num7 = 3242592;
+        int countTwos = 0;
+
+        while (num7 > 0) {
+            if ((num7 % 10) == 2) {
+                countTwos += 1;
             }
             num7 /= 10;
         }
 
-        num7 = 3242592;
-        if (count2 % 2 == 0) {
-            System.out.println("Число " + num7 + " содержит " + count2 + " (четное) количество двоек");
-        } else{
-            System.out.println("Число " + num7 + " содержит " + count2 + " (нечетное) количество двоек");
+        int copyNum7 = 3242592;
+        if (countTwos % 2 == 0 || countTwos % 2 != 0) {
+            System.out.println("Число " + copyNum7 + " содержит " + countTwos + " (четное/нечетное) количество двоек");
         }
 
         System.out.println("\n6. Отображение фигур в консоли");

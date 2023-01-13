@@ -13,7 +13,7 @@ public class GuessNumber {
                 } else if (playerNumber > guessNumber) {
                     System.out.println("Число " + playerNumber + " больше того, что загадал компьютер");
                     playerNumber--;
-                } else if (playerNumber == guessNumber) {
+                } else {
                     System.out.println("Вы победили!");
                     break;
                 }

@@ -58,40 +58,47 @@ public class CyclesTheme {
                 "Сумма цифр числа = " + sum);
 
         System.out.println("\n4. Вывод чисел на консоль в несколько строк");
-        int num5 = 1;
-        int max5 = 24;
-        int count5 = 0;
+        int startRange = 1;
+        int endRange = 24;
+        int numberOfNumbersPerLine = 0;
 
-        for (int i = num5; i < max5; i += 2) {
+        for (int i = startRange; i < endRange; i += 2) {
             System.out.printf("%4d", i);
-            count5++;
-            if (count5 == 5) {
-                count5 = 0;
+            numberOfNumbersPerLine++;
+            if (numberOfNumbersPerLine == 5) {
+                numberOfNumbersPerLine = 0;
                 System.out.println();
             }
         }
-        for (int j = num5; j <= (5 - count5); j++) {
-            System.out.printf("%4d", 0);
+        if (numberOfNumbersPerLine > 0) {
+            for (int j = startRange; j <= (5 - numberOfNumbersPerLine); j++) {
+                System.out.printf("%4d", 0);
+            }
         }
 
         System.out.println("\n\n5. Проверка количества двоек на четность/нечетность");
 
         int num7 = 3242592;
         int countTwos = 0;
+        int copyNum7 = num7;
 
         while (num7 > 0) {
             if ((num7 % 10) == 2) {
-                countTwos += 1;
+                countTwos++;
             }
             num7 /= 10;
         }
 
-        int copyNum7 = 3242592;
-        if (countTwos % 2 == 0 || countTwos % 2 != 0) {
-            System.out.println("Число " + copyNum7 + " содержит " + countTwos + " (четное/нечетное) количество двоек");
+        System.out.print("Число " + copyNum7 + " содержит ");
+
+        if (countTwos % 2 == 0) {
+            System.out.print(countTwos + " (четное) количество двоек");
+        } else {
+            System.out.print(countTwos + " (нечетное) количество двоек");
         }
 
-        System.out.println("\n6. Отображение фигур в консоли");
+        System.out.println("\n\n6. Отображение фигур в консоли");
+        System.out.println();
 
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 11; j++) {
@@ -102,60 +109,56 @@ public class CyclesTheme {
 
         System.out.println();
 
-        int upperLine = 5;
-        int bottomLine = upperLine;
-        while (bottomLine >= 1) {
+        int numberOfColumns = 5;
+        int numberOfLines = numberOfColumns;
+        while (numberOfLines >= 1) {
             int j = 1;
-            while (j <= bottomLine) {
+            while (j <= numberOfLines) {
                 System.out.print("#");
                 j++;
             }
-            System.out.println("");
-            bottomLine--;
+            System.out.println();
+            numberOfLines--;
         }
 
         System.out.println();
 
-        int upperBound = 1;
-        int vertexTriangle = 4;
-        do {
-            if (upperBound < vertexTriangle) {
-                System.out.println('$');
-            }
-            upperBound++;
-            if (upperBound < vertexTriangle) {
-                System.out.println("$$");
-                upperBound++;
-            }
-            if (upperBound < vertexTriangle) {
-                System.out.println("$$$");
-                upperBound++;
-            }
-        } while (upperBound <= vertexTriangle);
+        numberOfColumns = 1;
+        numberOfLines = 0;
+        int apexOfTriangle = 3;
 
-        int lowerBound = 1;
         do {
-            if (vertexTriangle > lowerBound) {
-                System.out.println("$$");
-            }
-            vertexTriangle--;
-            if (vertexTriangle > lowerBound) {
-                System.out.println('$');
-            }
-            vertexTriangle -= 2;
-        } while (vertexTriangle >= lowerBound);
+            int j = numberOfLines;
+            do {
+                System.out.print('$');
+                j++;
+            } while (j < numberOfColumns);
+            System.out.println();
+            numberOfColumns++;
+        } while (numberOfColumns <= apexOfTriangle);
 
-        System.out.println();
+        numberOfLines = 1;
+
+        do {
+            int j = apexOfTriangle - 1;
+            do {
+                System.out.print('$');
+                j--;
+            } while (j > 0);
+            System.out.println();
+            apexOfTriangle--;
+        } while (numberOfLines < apexOfTriangle);
 
         System.out.println("\n7. Отображение ASCII-символов");
 
-        System.out.println("Dec Char");
+        System.out.printf("%4s %8s \n", "Dec", "Char");
         for (int i = 0; i < 128; i++) {
             if (i < 48 && i % 2 != 0) {
-                System.out.printf("%3d %8c \n", i, (char) i);
+                System.out.printf("%3d %8c \n", i, i);
             }
+
             if (i > 96 && i < 123 && i % 2 == 0) {
-                System.out.printf("%3d %8c \n", i, (char) i);
+                System.out.printf("%3d %8c \n", i, i);
             }
         }
 

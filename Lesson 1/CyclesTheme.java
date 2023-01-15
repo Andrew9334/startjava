@@ -102,7 +102,7 @@ public class CyclesTheme {
 
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 11; j++) {
-                System.out.print("*");
+                System.out.print('*');
             }
             System.out.println();
         }
@@ -111,10 +111,11 @@ public class CyclesTheme {
 
         int numberOfColumns = 5;
         int numberOfLines = numberOfColumns;
+
         while (numberOfLines >= 1) {
             int j = 1;
             while (j <= numberOfLines) {
-                System.out.print("#");
+                System.out.print('#');
                 j++;
             }
             System.out.println();

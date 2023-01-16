@@ -97,9 +97,8 @@ public class CyclesTheme {
             System.out.print(countTwos + " (нечетное) количество двоек");
         }
 
-        System.out.println("\n\n6. Отображение фигур в консоли");
-        System.out.println();
-
+        System.out.println("\n\n6. Отображение фигур в консоли\n");
+        
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 11; j++) {
                 System.out.print('*');
@@ -166,48 +165,45 @@ public class CyclesTheme {
         System.out.println("\n8. Проверка, является ли число палиндромом");
 
         int num8 = 1234321;
-        int initial = 0;
-        int revers = 0;
-        int temp = num8;
+        int reverse = 0;
+        int copyNum8 = num8;
 
-        while (num8 != 0) {
-            initial = num8 % 10;
-            revers = revers * 10 + initial;
+        while (num8 > 0) {
+            int digit = num8 % 10;
+            reverse = reverse * 10 + digit;
             num8 /= 10;
         }
 
-        if (temp == revers) {
-            System.out.println("Число " + temp + " является палиндромом");
+        if (copyNum8 == reverse) {
+            System.out.println("Число " + copyNum8 + " является палиндромом");
         } else {
-            System.out.println("Число " + temp + " не является палиндромом");
+            System.out.println("Число " + copyNum8 + " не является палиндромом");
         }
 
         System.out.println("\n9. Определение, является ли число счастливым");
 
-        int num9 = 123796;
-        int sumFirstHalf = 0;
-        int sumSecondHalf = 0;
-        int temp2 = num9 / 1000;
-        int temp3 = num9 % 1000;
+        int numberToCheck = 123796;
+        int sumLeftHalf = 0;
+        int sumRightHalf = 0;
+        int leftHalf = numberToCheck / 1000;
+        int rightHalf = numberToCheck % 1000;
+        System.out.println(leftHalf);
+        System.out.println(rightHalf);
 
-        while (temp2 != 0) {
-            sumFirstHalf = (temp2 % 10) + sumFirstHalf;
-            temp2 /= 10;
+        while (leftHalf != 0 && rightHalf != 0) {
+            sumLeftHalf = (leftHalf % 10) + sumLeftHalf;
+            sumRightHalf = (rightHalf % 10) + sumRightHalf;
+            leftHalf /= 10;
+            rightHalf /= 10;
         }
 
-        System.out.println("Сумма цифр sumFirstHalf = " + sumFirstHalf);
+        System.out.println("Сумма цифр sumLeftHalf = " + sumLeftHalf);
+        System.out.println("Сумма цифр sumRightHalf = " + sumRightHalf);
 
-        while (temp3 != 0) {
-            sumSecondHalf = (temp3 % 10) + sumSecondHalf;
-            temp3 /= 10;
-        }
-
-        System.out.println("Сумма цифр sumSecondHalf = " + sumSecondHalf);
-
-        if (sumFirstHalf == sumSecondHalf) {
-            System.out.println("Число - " + num9 + " является счастливым числом");
+        if (sumLeftHalf == sumRightHalf) {
+            System.out.println("Число - " + numberToCheck + " является счастливым числом");
         } else {
-            System.out.println("Число - " + num9 + " не является счастливым числом");
+            System.out.println("Число - " + numberToCheck + " не является счастливым числом");
         }
 
         System.out.println("\n10. Вывод таблицы умножения Пифагора");
@@ -226,7 +222,7 @@ public class CyclesTheme {
                     System.out.print("|");
                 }
             }
-                System.out.println();
+        System.out.println();
         }
     }
 }

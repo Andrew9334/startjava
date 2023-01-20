@@ -25,7 +25,12 @@ public class Calculator {
                 System.out.println("Введено недопустимое выражение");
                 break;
         }
-        System.out.println(num1 + " " + sign + " " + num2 + " = " + result);
+        
+        if (sign >= 48 && sign <= 57){
+            
+        } else {
+            System.out.println(num1 + " " + sign + " " + num2 + " = " + result);
+        }
     }
 }
 

@@ -11,5 +11,6 @@ public class WolfTest {
                 "кличка - " + wolf.getNickname() + ", \n" +
                 "вес - " + wolf.getWeight() + ", \n" +
                 "возраст - " + wolf.getAge() + ", \n" +
-                "окрас - " + wolf.getColor());    }
+                "окрас - " + wolf.getColor());
+    }
 }

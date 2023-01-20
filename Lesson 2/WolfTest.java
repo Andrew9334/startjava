@@ -7,16 +7,9 @@ public class WolfTest {
         wolf.setAge(7);
         wolf.setColor("Gray");
 
-        char sex = wolf.getSex();
-        String nickname = wolf.getNickname();
-        int weight = wolf.getWeight();
-        int age = wolf.getAge();
-        String color = wolf.getColor();
-
-        System.out.println("Пол - " + sex + ", \n" +
-                "кличка - " + nickname + ", \n" +
-                "вес - " + weight + ", \n" +
-                "возраст - " + age + ", \n" +
-                "окрас - " + color);
-    }
+        System.out.println("Пол - " + wolf.getSex() + ", \n" +
+                "кличка - " + wolf.getNickname() + ", \n" +
+                "вес - " + wolf.getWeight() + ", \n" +
+                "возраст - " + wolf.getAge() + ", \n" +
+                "окрас - " + wolf.getColor());    }
 }

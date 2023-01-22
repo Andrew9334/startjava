@@ -1,5 +1,7 @@
 public class Calculator {
-    public void Calculation(int num1, char sign, int num2, int result) {
+    public void calculate(int num1, char sign, int num2) {
+        int result = 0;
+
         switch (sign) {
             case '+':
                 result = num1 + num2;
@@ -23,11 +25,10 @@ public class Calculator {
                 break;
             default:
                 System.out.println("Введено недопустимое выражение");
-                break;
         }
-        
-        if (sign >= 48 && sign <= 57){
-            
+
+        if (sign >= '1' && sign <= '9') {
+            System.out.print("");
         } else {
             System.out.println(num1 + " " + sign + " " + num2 + " = " + result);
         }

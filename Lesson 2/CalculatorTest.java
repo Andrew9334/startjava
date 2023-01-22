@@ -4,7 +4,7 @@ public class CalculatorTest {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
         Scanner scanner = new Scanner(System.in);
-        String answer = "yes";;
+        String answer = "yes";
 
         do {
             if ("yes".equals(answer)) {
@@ -15,12 +15,11 @@ public class CalculatorTest {
                 System.out.print("Введите второе число: ");
                 int num2 = scanner.nextInt();
                 int result = 1;
-                calculator.Calculation(num1, sign, num2, result);
-            }
-            if (!"yes".equals(answer)) {
+                calculator.calculate(num1, sign, num2);
+            } else {
                 System.out.println("Хотите продолжить вычисления? [yes/no]");
             }
-                answer = scanner.nextLine();
+            answer = scanner.nextLine();
         } while (!"no".equals(answer));
 
         scanner.close();

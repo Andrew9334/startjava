@@ -1,4 +1,5 @@
 public class Calculator {
+
     public void calculate(int num1, char sign, int num2) {
         int result = 0;
 
@@ -26,11 +27,7 @@ public class Calculator {
             default:
                 System.out.println("Введено недопустимое выражение");
         }
-
-        if (sign >= '1' && sign <= '9') {
-            System.out.print("");
-        } else {
-            System.out.println(num1 + " " + sign + " " + num2 + " = " + result);
-        }
+        
+        System.out.println(num1 + " " + sign + " " + num2 + " = " + result);
     }
 }

@@ -4,11 +4,19 @@ public class JaegerTest {
         Jaeger jaegerTwo = new Jaeger("Cherno Alpha", "Mark-1",
                 "Russia", 85.34f, 2.412f);
 
-        System.out.println("\nМодель - " + jaegerTwo.getModelName("Coyote Tango") + ", \n" +
-                "Марка - " + jaegerTwo.getMark("Mark-1") + ", \n" +
-                "Страна производитель - " + jaegerTwo.getOrigin("Japan") + ", \n" +
-                "Высота робота - " + jaegerTwo.getHeight(85.34f) + ", \n" +
-                "Вес робота - " + jaegerTwo.getWeight(2.312f) + '\n');
+        jaegerOne.setModelName("Coyote Tango");
+        jaegerOne.setMark("Mark-1");
+        jaegerOne.setOrigin("Japan");
+        jaegerOne.setHeight(85.34f);
+        jaegerOne.setWeight(2.312f);
+
+        System.out.print(jaegerTwo);
+
+        System.out.println("\nМодель - " + jaegerOne.getModelName() + ", \n" +
+                "Марка - " + jaegerOne.getMark() + ", \n" +
+                "Страна производитель - " + jaegerOne.getOrigin() + ", \n" +
+                "Высота робота - " + jaegerOne.getHeight() + ", \n" +
+                "Вес робота - " + jaegerOne.getWeight() + '\n');
 
         jaegerOne.attack();
         jaegerOne.runAway();

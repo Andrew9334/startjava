@@ -15,15 +15,9 @@ public class Jaeger {
         this.origin = origin;
         this.height = height;
         this.weight = weight;
-
-        System.out.println("Модель - " + modelName + ", \n" +
-                "Марка - " + mark + ", \n" +
-                "Страна производитель - " + origin + ", \n" +
-                "Высота робота - " + height + ", \n" +
-                "Вес робота - " + weight);
     }
 
-    public String getModelName(String modelName) {
+    public String getModelName() {
         return modelName;
     }
 
@@ -31,7 +25,7 @@ public class Jaeger {
         this.modelName = modelName;
     }
 
-    public String getMark(String mark) {
+    public String getMark() {
         return mark;
     }
 
@@ -39,7 +33,7 @@ public class Jaeger {
         this.mark = mark;
     }
 
-    public String getOrigin(String origin) {
+    public String getOrigin() {
         return origin;
     }
 
@@ -47,7 +41,7 @@ public class Jaeger {
         this.origin = origin;
     }
 
-    public float getHeight(float height) {
+    public float getHeight() {
         return height;
     }
 
@@ -55,7 +49,7 @@ public class Jaeger {
         this.height = height;
     }
 
-    public float getWeight(float weight) {
+    public float getWeight() {
         return weight;
     }
 
@@ -73,5 +67,14 @@ public class Jaeger {
 
     void rest() {
         System.out.println("Отдыхаем");
+    }
+
+    @Override
+    public String toString() {
+        return  "Модель - " + modelName + ",\n" +
+                "Марка - " + mark + ",\n" +
+                "Старан производитель " + origin + ",\n" +
+                "Высота робота - " + height + ",\n" +
+                "Высота робота - " + weight + ",\n";
     }
 }

@@ -25,7 +25,8 @@ public class Calculator {
                 result = num1 % num2;
                 break;
             default:
-                System.out.println("Введено недопустимое выражение");
+                System.out.println("Знак " + sign + " не поддерживается");
+                return;
         }
         
         System.out.println(num1 + " " + sign + " " + num2 + " = " + result);

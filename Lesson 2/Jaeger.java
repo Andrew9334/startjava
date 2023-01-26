@@ -5,9 +5,7 @@ public class Jaeger {
     private float height;
     private float weight;
 
-    public Jaeger() {
-
-    }
+    public Jaeger() {}
 
     public Jaeger(String modelName, String mark, String origin, float height, float weight) {
         this.modelName = modelName;
@@ -71,9 +69,9 @@ public class Jaeger {
 
     @Override
     public String toString() {
-        return  "Модель - " + modelName + ",\n" +
+        return "Модель - " + modelName + ",\n" +
                 "Марка - " + mark + ",\n" +
-                "Старан производитель " + origin + ",\n" +
+                "Страна производитель " + origin + ",\n" +
                 "Высота робота - " + height + ",\n" +
                 "Высота робота - " + weight + ",\n";
     }

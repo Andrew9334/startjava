@@ -1,5 +1,3 @@
-package lesson2;
-
 public class JaegerTest {
     public static void main(String[] args) {
         Jaeger jaegerOne = new Jaeger();
@@ -18,7 +16,7 @@ public class JaegerTest {
 
         Jaeger jaegerTwo = new Jaeger("Cherno Alpha", "Mark-1",
                 "Russia", 85.34f, 2.412f);
-        System.out.print(jaegerTwo);
+        System.out.println(jaegerTwo);
 
         jaegerOne.attack();
         jaegerOne.runAway();

@@ -10,8 +10,7 @@ public class GuessNumber {
         this.player2 = player2;
     }
 
-    public void game() {
-        int estimatedNum = 0;
+    public void play() {
         int min = 1;
         int max = 100;
         Random random = new Random();
@@ -19,13 +18,15 @@ public class GuessNumber {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
+            int estimatedNum = 0;
             System.out.println(player1.getName() + " введите число: ");
             estimatedNum = scanner.nextInt();
 
             if (estimatedNum == hiddenNum) {
                 System.out.println("Выиграл " + player1.getName());
                 break;
-            } else if (estimatedNum < hiddenNum) {
+            } 
+            if (estimatedNum < hiddenNum) {
                 System.out.println("Загаданное число больше");
             } else {
                 System.out.println("Загаданное число меньше");
@@ -37,7 +38,8 @@ public class GuessNumber {
             if (estimatedNum == hiddenNum) {
                 System.out.println("Выиграл " + player2.getName());
                 break;
-            } else if (estimatedNum < hiddenNum) {
+            } 
+            if (estimatedNum < hiddenNum) {
                 System.out.println("Загаданное число больше");
             } else {
                 System.out.println("Загаданное число меньше");

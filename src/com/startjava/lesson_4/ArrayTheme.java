@@ -11,12 +11,12 @@ public class ArrayTheme {
         System.out.println("Исходный массив");
         printIntArray(intArr);
 
-        for (int i = 0; i < length / 2; i++) {
+        for (int i = 0; i < length; i++, length--) {
             int temp = intArr[i];
-            intArr[i] = intArr[length - i - 1];
-            intArr[length - i - 1] = temp;
-        }
+            intArr[i] = intArr[length - 1];
+            intArr[length - 1] = temp;
 
+        }
         System.out.println("\n\nИзмененный массив");
         printIntArray(intArr);
 
@@ -29,7 +29,6 @@ public class ArrayTheme {
         }
 
         int result = 1;
-
         for (int i = 1; i < length - 1; i++) {
             result *= intArr[i];
             System.out.print(intArr[i] + (i != length - 2 ? " * " : " = " + result));
@@ -42,40 +41,36 @@ public class ArrayTheme {
         double[] doubleArr = new double[15];
         length = doubleArr.length;
 
-        System.out.println("Исходный массив ");
         for (int i = 0; i < length; i++) {
             doubleArr[i] = Math.random();
         }
-
+        System.out.println("Исходный массив ");
         printDoubleArray(doubleArr);
 
-        System.out.println();
-
         int count = 0;
-        int index = length / 2;;
-        double avgNumber = doubleArr[index];
+        double middleCellValue = doubleArr[length / 2];
 
         System.out.println("\nИзмененный массив ");
         for (int i = 0; i < length; i++) {
-            if (doubleArr[i] > avgNumber) {
+            if (doubleArr[i] > middleCellValue) {
                 doubleArr[i] = 0;
                 count++;
             }
         }
 
         printDoubleArray(doubleArr);
-        System.out.println("\n\nКоличество обнуленных ячеек - " + count);
+        System.out.println("\nКоличество обнуленных ячеек - " + count);
 
         System.out.println("\n4. Вывод элементов массива лесенкой в обратном порядке");
 
         length = 26;
-        char[] charArray = new char[length];
+        char[] englishLetterArrays = new char[length];
 
         for (int i = 0; i < length; i++) {
-            charArray[i] = (char) (90 - i);
+            englishLetterArrays[i] = (char) ('A' + i);
             for (int j = 0; j < 26; j++) {
                 if (j <= i) {
-                    System.out.print(charArray[j]);
+                    System.out.print(englishLetterArrays[j]);
                 } else {
                     break;
                 }
@@ -87,19 +82,20 @@ public class ArrayTheme {
 
         intArr = new int[30];
         length = intArr.length;
-
+        doubleArr = new double[length];
         for (int i = 0; i < length; i++) {
-            double array = 60 + Math.random() * 40;
-            intArr[i] = (int) array;
+            double arrayOfRandomArrays = 60 + Math.random() * 40;
+            doubleArr[i] = (int) arrayOfRandomArrays;
 
             for (int j = 0; j < i; j++) {
                 if (i == j) {
                     continue;
-                } else if (intArr[i] == intArr[j]) {
+                } else if (doubleArr[j] == doubleArr[i]) {
                     i--;
                     break;
                 }
             }
+            intArr[i] = (int) doubleArr[i];
         }
 
         for (int i = 0; i < length; i++) {
@@ -113,7 +109,7 @@ public class ArrayTheme {
         }
         printIntArraySample(intArr);
 
-        System.out.println("\n\n6. Сдвиг элементов массива");
+        System.out.println("\n6. Сдвиг элементов массива");
 
         String[] srcArray = {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
         int countNotBlank = 0;
@@ -131,20 +127,20 @@ public class ArrayTheme {
 
         int srcPos = 0;
         int destPos = 0;
-        int len = 0;
+        length = 0;
 
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < srcArray.length; i++) {
             if (srcArray[i].isBlank()) {
-                System.arraycopy(srcArray, srcPos, destArray, destPos, len);
+                System.arraycopy(srcArray, srcPos, destArray, destPos, length);
                 srcPos = i + 1;
-                destPos += len;
-                len = 0;
+                destPos += length;
+                length = 0;
             } else {
-                len++;
+                length++;
             }
         }
 
-        printStringArray(srcArray);
+        printStringArray(destArray);
     }
 
     private static void printIntArray(int[] intArray) {
@@ -155,7 +151,6 @@ public class ArrayTheme {
 
     private static void printIntArraySample(int[] intArray) {
         int length = intArray.length;
-
         for (int i = 0; i < intArray.length; i++) {
             if (i == length / 2 - 5 || i == length / 2 + 5) {
                 System.out.println();
@@ -172,12 +167,14 @@ public class ArrayTheme {
                 System.out.println();
             }
         }
+        System.out.println();
     }
 
     private static void printStringArray(String[] stringArray) {
         for (String s : stringArray) {
             System.out.print(s + " ");
         }
+        System.out.println();
     }
 }
 

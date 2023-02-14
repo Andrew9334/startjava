@@ -11,11 +11,11 @@ public class ArrayTheme {
         System.out.println("Исходный массив");
         printIntArray(intArr);
 
-        for (int i = 0; i < length; i++, length--) {
+        for (int i = 0; i < length; i++) {
+            --length;
             int temp = intArr[i];
-            intArr[i] = intArr[length - 1];
-            intArr[length - 1] = temp;
-
+            intArr[i] = intArr[length];
+            intArr[length] = temp;
         }
         System.out.println("\n\nИзмененный массив");
         printIntArray(intArr);
@@ -64,13 +64,13 @@ public class ArrayTheme {
         System.out.println("\n4. Вывод элементов массива лесенкой в обратном порядке");
 
         length = 26;
-        char[] englishLetterArrays = new char[length];
+        char[] alphabet = new char[length];
 
         for (int i = 0; i < length; i++) {
-            englishLetterArrays[i] = (char) ('A' + i);
-            for (int j = 0; j < 26; j++) {
+            alphabet[i] = (char) ('Z' - i);
+            for (int j = 0; j <= i; j++) {
                 if (j <= i) {
-                    System.out.print(englishLetterArrays[j]);
+                    System.out.print(alphabet[j]);
                 } else {
                     break;
                 }
@@ -82,20 +82,18 @@ public class ArrayTheme {
 
         intArr = new int[30];
         length = intArr.length;
-        doubleArr = new double[length];
         for (int i = 0; i < length; i++) {
-            double arrayOfRandomArrays = 60 + Math.random() * 40;
-            doubleArr[i] = (int) arrayOfRandomArrays;
+            double randomNumber = 60 + Math.random() * 40;
+            intArr[i] = (int) randomNumber;
 
             for (int j = 0; j < i; j++) {
                 if (i == j) {
                     continue;
-                } else if (doubleArr[j] == doubleArr[i]) {
+                } else if (intArr[j] == intArr[i]) {
                     i--;
                     break;
                 }
             }
-            intArr[i] = (int) doubleArr[i];
         }
 
         for (int i = 0; i < length; i++) {
@@ -117,29 +115,27 @@ public class ArrayTheme {
 
         printStringArray(srcArray);
 
-        for (int i = 0; i < length; i++) {
-            if (!srcArray[i].isBlank()) {
+        for (String string : srcArray) {
+            if (!string.isBlank()) {
                 countNotBlank++;
             }
         }
 
         String[] destArray = new String[countNotBlank];
 
-        int srcPos = 0;
+        int srcPos;
         int destPos = 0;
-        length = 0;
+        length = 1;
 
         for (int i = 0; i < srcArray.length; i++) {
-            if (srcArray[i].isBlank()) {
+            if (!srcArray[i].isBlank()) {
+                srcPos = i;
                 System.arraycopy(srcArray, srcPos, destArray, destPos, length);
-                srcPos = i + 1;
-                destPos += length;
-                length = 0;
+                destPos++;
             } else {
-                length++;
+                continue;
             }
         }
-
         printStringArray(destArray);
     }
 

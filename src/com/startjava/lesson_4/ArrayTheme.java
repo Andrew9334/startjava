@@ -12,9 +12,8 @@ public class ArrayTheme {
         printIntArray(intArr);
 
         for (int i = 0; i < length; i++) {
-            --length;
             int temp = intArr[i];
-            intArr[i] = intArr[length];
+            intArr[i] = intArr[--length];
             intArr[length] = temp;
         }
         System.out.println("\n\nИзмененный массив");
@@ -67,9 +66,12 @@ public class ArrayTheme {
         char[] alphabet = new char[length];
 
         for (int i = 0; i < length; i++) {
-            alphabet[i] = (char) ('Z' - i);
-            for (int j = 0; j <= i; j++) {
-                if (j <= i) {
+            alphabet[i] = (char) ('A' + i);
+        }
+
+        for (int i = 0; i < length; i++) {
+            for (int j = length - 1; j >= i; j--) {
+                if (j >= i) {
                     System.out.print(alphabet[j]);
                 } else {
                     break;
@@ -125,15 +127,15 @@ public class ArrayTheme {
 
         int srcPos;
         int destPos = 0;
-        length = 1;
+        length = 0;
 
         for (int i = 0; i < srcArray.length; i++) {
-            if (!srcArray[i].isBlank()) {
+            if (!srcArray[i].isBlank() && i < 8) {
                 srcPos = i;
                 System.arraycopy(srcArray, srcPos, destArray, destPos, length);
                 destPos++;
-            } else {
-                continue;
+            } else if (srcArray[i].isBlank()) {
+                length++;
             }
         }
         printStringArray(destArray);

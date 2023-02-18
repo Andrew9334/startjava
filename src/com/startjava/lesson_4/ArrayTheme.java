@@ -70,12 +70,8 @@ public class ArrayTheme {
         }
 
         for (int i = 0; i < length; i++) {
-            for (int j = length - 1; j >= i; j--) {
-                if (j >= i) {
-                    System.out.print(alphabet[j]);
-                } else {
-                    break;
-                }
+            for (int j = 0; j <= i; j++) {
+                    System.out.print(alphabet[length - 1 - j]);
             }
             System.out.println();
         }
@@ -111,7 +107,7 @@ public class ArrayTheme {
 
         System.out.println("\n6. Сдвиг элементов массива");
 
-        String[] srcArray = {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
+        String[] srcArray = {"    ", "AA", "", "BBB", "CC", "D","    ", "E", "FF", "G", ""};
         int countNotBlank = 0;
         length = srcArray.length;
 
@@ -125,17 +121,21 @@ public class ArrayTheme {
 
         String[] destArray = new String[countNotBlank];
 
-        int srcPos;
+        int srcPos = 0;
         int destPos = 0;
         length = 0;
 
         for (int i = 0; i < srcArray.length; i++) {
-            if (!srcArray[i].isBlank() && i < 8) {
-                srcPos = i;
-                System.arraycopy(srcArray, srcPos, destArray, destPos, length);
-                destPos++;
-            } else if (srcArray[i].isBlank()) {
+            if (!srcArray[i].isBlank()) {
+                if (length == 0) {
+                    srcPos = i;
+                }
                 length++;
+            }
+            if (length != 0 && srcArray[i].isBlank() == true) {
+                System.arraycopy(srcArray, srcPos, destArray, destPos, length);
+                destPos += length;
+                length = 0;
             }
         }
         printStringArray(destArray);

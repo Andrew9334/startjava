@@ -1,6 +1,5 @@
 package com.startjava.lesson_4;
 
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class CalculateTest {

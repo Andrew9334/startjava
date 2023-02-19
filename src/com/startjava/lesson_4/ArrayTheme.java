@@ -81,16 +81,19 @@ public class ArrayTheme {
         intArr = new int[30];
         length = intArr.length;
         for (int i = 0; i < length; i++) {
-            double randomNumber = 60 + Math.random() * 40;
-            intArr[i] = (int) randomNumber;
-
-            for (int j = 0; j < i; j++) {
+            boolean uniqueNumber = true;
+            int randomNumber = (int) (60 + Math.random() * 40);
+            for (int j = 0; j <= i; j++) {
                 if (i == j) {
                     continue;
-                } else if (intArr[j] == intArr[i]) {
+                } else if (intArr[j] == randomNumber) {
+                    uniqueNumber = false;
                     i--;
                     break;
                 }
+            }
+            if (uniqueNumber) {
+                intArr[i] = randomNumber;
             }
         }
 
@@ -132,7 +135,7 @@ public class ArrayTheme {
                 }
                 length++;
             }
-            if (length != 0 && srcArray[i].isBlank() == true) {
+            if (length != 0) {
                 System.arraycopy(srcArray, srcPos, destArray, destPos, length);
                 destPos += length;
                 length = 0;

@@ -10,12 +10,20 @@ public class CalculatorTest {
         do {
             if ("yes".equals(answer)) {
                 System.out.print("Введите математическое выражение: ");
-                String expression = scanner.nextLine();
-                calculator.calculate(expression);
+                double result = calculator.calculate(scanner.nextLine());
+                System.out.println(format(result));
             }
-            System.out.println("\nХотите продолжить вычисления? [yes/no]");
+            System.out.println("Хотите продолжить вычисления? [yes/no]");
             answer = scanner.nextLine();
         } while (!"no".equals(answer));
         scanner.close();
+    }
+
+    public static String format (double result) {
+        if (result == (int) result) {
+            return String.format("%d", (int) result);
+        } else {
+            return String.format("%s", result);
+        }
     }
 }

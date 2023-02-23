@@ -5,7 +5,7 @@ public class Calculator {
     private int num2;
     private char sign;
 
-    public void calculate(String expression) {
+    public double calculate(String expression) {
         double result = 0;
         parseExpression(expression);
         switch (sign) {
@@ -29,20 +29,14 @@ public class Calculator {
                 break;
             default:
                 System.out.println("Знак " + sign + " не поддерживается");
-                return;
         }
-
-        if (result == (int) result) {
-            System.out.printf("%s = %d", expression, (int) result);
-        } else {
-            System.out.printf("%s = %f", expression, result);
-        }
+        return result;
     }
 
     private void parseExpression(String expression) {
-        String[] parseExpression = expression.split(" ");
-        num1 = Integer.parseInt(parseExpression[0]);
-        sign = parseExpression[1].charAt(0);
-        num2 = Integer.parseInt(parseExpression[2]);
+        String[] partsExpression = expression.split(" ");
+        num1 = Integer.parseInt(partsExpression[0]);
+        sign = partsExpression[1].charAt(0);
+        num2 = Integer.parseInt(partsExpression[2]);
     }
 }

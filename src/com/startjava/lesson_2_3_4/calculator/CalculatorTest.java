@@ -10,8 +10,7 @@ public class CalculatorTest {
         do {
             if ("yes".equals(answer)) {
                 System.out.print("Введите математическое выражение: ");
-                double result = calculator.calculate(scanner.nextLine());
-                System.out.println(format(result));
+                format(calculator.calculate(scanner.nextLine()));
             }
             System.out.println("Хотите продолжить вычисления? [yes/no]");
             answer = scanner.nextLine();
@@ -19,11 +18,12 @@ public class CalculatorTest {
         scanner.close();
     }
 
-    public static String format (double result) {
-        if (result == (int) result) {
-            return String.format("%d", (int) result);
+    public static double format(double result) {
+        if (result % 1 == 0) {
+            System.out.println((int) result);
         } else {
-            return String.format("%s", result);
+            System.out.println(result);
         }
+        return result;
     }
 }

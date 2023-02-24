@@ -10,23 +10,17 @@ public class Calculator {
         parseExpression(expression);
         switch (sign) {
             case '+':
-                result = Math.addExact(num1, num2);
-                break;
+                return Math.addExact(num1, num2);
             case '-':
-                result = Math.subtractExact(num1, num2);
-                break;
+                return Math.subtractExact(num1, num2);
             case '*':
-                result = Math.multiplyExact(num1, num2);
-                break;
+                return Math.multiplyExact(num1, num2);
             case '^':
-                result = (int) Math.pow(num1, num2);
-                break;
+                return Math.pow(num1, num2);
             case '/':
-                result = Math.floorDiv(num1, num2);
-                break;
+                return (double) num1 / num2;
             case '%':
-                result = Math.floorMod(num1, num2);
-                break;
+                return Math.floorMod(num1, num2);
             default:
                 System.out.println("Знак " + sign + " не поддерживается");
         }

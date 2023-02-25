@@ -10,7 +10,7 @@ public class CalculatorTest {
         do {
             if ("yes".equals(answer)) {
                 System.out.print("Введите математическое выражение: ");
-                format(calculator.calculate(scanner.nextLine()));
+                printResult(calculator.calculate(scanner.nextLine()));
             }
             System.out.println("Хотите продолжить вычисления? [yes/no]");
             answer = scanner.nextLine();
@@ -18,7 +18,7 @@ public class CalculatorTest {
         scanner.close();
     }
 
-    public static double format(double result) {
+    public static double printResult(double result) {
         if (result % 1 == 0) {
             System.out.println((int) result);
         } else {

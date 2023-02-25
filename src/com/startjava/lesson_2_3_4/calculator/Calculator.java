@@ -6,7 +6,6 @@ public class Calculator {
     private char sign;
 
     public double calculate(String expression) {
-        double result = 0;
         parseExpression(expression);
         switch (sign) {
             case '+':
@@ -24,7 +23,7 @@ public class Calculator {
             default:
                 System.out.println("Знак " + sign + " не поддерживается");
         }
-        return result;
+        return 0;
     }
 
     private void parseExpression(String expression) {

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Player {
     private String name;
-    private int[] numbersOfPlayer = new int[10];
+    private int[] inputNumbers = new int[10];
     private int countAttempts;
 
     public Player(String name) {
@@ -19,16 +19,16 @@ public class Player {
         return countAttempts;
     }
 
-    public void addNumberOfPlayer(int playerNumber) {
-        this.numbersOfPlayer[countAttempts++] = playerNumber;
+    public void addNumber(int playerNumber) {
+        this.inputNumbers[countAttempts++] = playerNumber;
     }
 
-    public int[] getNumberOfPlayer() {
-        return Arrays.copyOf(numbersOfPlayer, countAttempts);
+    public int[] getNumber() {
+        return Arrays.copyOf(inputNumbers, countAttempts);
     }
 
     public void clearAttempts() {
-        Arrays.fill(numbersOfPlayer, 0, countAttempts, 0);
+        Arrays.fill(inputNumbers, 0, countAttempts, 0);
         countAttempts = 0;
     }
 }

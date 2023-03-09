@@ -18,12 +18,11 @@ public class CalculatorTest {
         scanner.close();
     }
 
-    public static double printResult(double result) {
+    public static void printResult(double result) {
         if (result % 1 == 0) {
             System.out.println((int) result);
         } else {
             System.out.println(result);
         }
-        return result;
     }
 }

@@ -15,16 +15,16 @@ public class Player {
         return name;
     }
 
+    public int[] getNumber() {
+        return Arrays.copyOf(inputNumbers, countAttempts);
+    }
+
     public int getCountAttempts() {
         return countAttempts;
     }
 
-    public void addNumber(int playerNumber) {
-        this.inputNumbers[countAttempts++] = playerNumber;
-    }
-
-    public int[] getNumber() {
-        return Arrays.copyOf(inputNumbers, countAttempts);
+    public void addNumber(int number) {
+        inputNumbers[countAttempts++] = number;
     }
 
     public void clearAttempts() {

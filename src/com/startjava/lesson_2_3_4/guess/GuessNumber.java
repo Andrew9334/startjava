@@ -14,6 +14,21 @@ public class GuessNumber {
         this.player2 = player2;
     }
 
+    public void play() {
+        clear();
+        generateHiddenNumber();
+        System.out.println("У каждого игрока по 10 попыток");
+        while (!hasAttempts(player1) | !hasAttempts(player2)) {
+            if (isGuessed(player1) | isGuessed(player2)) {
+                break;
+            }
+        }
+        System.out.print("Игрок " + player1.getName() + " ввел числа: ");
+        printInputNumber(player1);
+        System.out.print("\nИгрок " + player2.getName() + " ввел числа: ");
+        printInputNumber(player2);
+    }
+
     private void clear() {
         player1.clearAttempts();
         player2.clearAttempts();
@@ -64,20 +79,5 @@ public class GuessNumber {
         for (int i : player.getNumber()) {
             System.out.printf("%d %s", i, " ");
         }
-    }
-
-    public void play() {
-        clear();
-        generateHiddenNumber();
-        System.out.println("У каждого игрока по 10 попыток");
-        while (!hasAttempts(player1) | !hasAttempts(player2)) {
-            if (isGuessed(player1) | isGuessed(player2)) {
-                break;
-            }
-        }
-        System.out.print("Игрок " + player1.getName() + " ввел числа: ");
-        printInputNumber(player1);
-        System.out.print("\nИгрок " + player2.getName() + " ввел числа: ");
-        printInputNumber(player2);
     }
 }

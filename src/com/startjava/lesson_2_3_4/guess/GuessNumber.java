@@ -18,15 +18,12 @@ public class GuessNumber {
         clear();
         generateHiddenNumber();
         System.out.println("У каждого игрока по 10 попыток");
-        while (!hasAttempts(player1) | !hasAttempts(player2)) {
-            if (isGuessed(player1) | isGuessed(player2)) {
-                break;
-            }
+        if (isGuessed(player1) | isGuessed(player2)) {
         }
         System.out.print("Игрок " + player1.getName() + " ввел числа: ");
-        printInputNumber(player1);
+        printEnteredNumbers(player1);
         System.out.print("\nИгрок " + player2.getName() + " ввел числа: ");
-        printInputNumber(player2);
+        printEnteredNumbers(player2);
     }
 
     private void clear() {
@@ -42,7 +39,7 @@ public class GuessNumber {
     }
 
     private boolean hasAttempts(Player player) {
-        if (player.getCountAttempts() == ATTEMPTS_LIMIT && player.getCountAttempts() == ATTEMPTS_LIMIT) {
+        if (player.getCountAttempts() == ATTEMPTS_LIMIT) {
             System.out.println("У игрока " + player.getName() + " закончились попытки.");
             return true;
         }
@@ -50,17 +47,16 @@ public class GuessNumber {
     }
 
     private boolean isGuessed(Player player) {
-        int estimatedNumber = 0;
         while (!hasAttempts(player)) {
             System.out.print(player.getName() + " введите число: ");
-            estimatedNumber = inputNumber(player);
+            int playerNumber = inputNumber(player);
 
-            if (estimatedNumber == hiddenNumber) {
+            if (playerNumber == hiddenNumber) {
                 System.out.println("Игрок " + player.getName() + " угадал " + hiddenNumber + " с " +
                         player.getCountAttempts() + " попытки");
                 return true;
             }
-            if (estimatedNumber < hiddenNumber) {
+            if (playerNumber < hiddenNumber) {
                 System.out.println("Загаданное число больше");
             } else {
                 System.out.println("Загаданное число меньше");
@@ -75,7 +71,7 @@ public class GuessNumber {
         return number;
     }
 
-    private void printInputNumber(Player player) {
+    private void printEnteredNumbers(Player player) {
         for (int i : player.getNumber()) {
             System.out.printf("%d %s", i, " ");
         }

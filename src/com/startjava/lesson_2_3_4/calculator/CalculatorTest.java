@@ -1,17 +1,23 @@
 package com.startjava.lesson_2_3_4.calculator;
 
 import java.util.Scanner;
-import static com.startjava.lesson_2_3_4.calculator.Calculator.calculate;
+
 
 public class CalculatorTest {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String answer = "yes";
         do {
-            if ("yes".equals(answer)) {
-                System.out.print("Введите математическое выражение: ");
-                printResult(calculate(scanner.nextLine()));
-            }
+            try {
+                if ("yes".equals(answer)) {
+                    System.out.print("Введите математическое выражение: ");
+                    printResult(Calculator.calculate(scanner.nextLine()));
+                    throw new NumberFormatException();
+                }
+            } catch (NumberFormatException e) {
+                    System.out.print("Введите математическое выражение: ");
+                    printResult(Calculator.calculate(scanner.nextLine()));
+                }
             System.out.println("Хотите продолжить вычисления? [yes/no]");
             answer = scanner.nextLine();
         } while (!"no".equals(answer));

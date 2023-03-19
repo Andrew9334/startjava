@@ -15,9 +15,9 @@ public class CalculatorTest {
                     throw new NumberFormatException();
                 }
             } catch (NumberFormatException e) {
-                    System.out.print("Введите математическое выражение: ");
-                    printResult(Calculator.calculate(scanner.nextLine()));
-                }
+                System.out.print("Введите математическое выражение: ");
+                printResult(Calculator.calculate(scanner.nextLine()));
+            }
             System.out.println("Хотите продолжить вычисления? [yes/no]");
             answer = scanner.nextLine();
         } while (!"no".equals(answer));

@@ -18,7 +18,7 @@ public class Calculator {
         };
     }
 
-    public static void parseExpression(String expression) {
+    private static void parseExpression(String expression) {
         String[] partsExpression = expression.split(" ");
         try {
             if ((num1 % 1 == 0.0 && num2 % 1 == 0.0) || (num1 < 0 || num2 < 0)) {

@@ -8,13 +8,7 @@ public class CalculatorTest {
         Scanner scanner = new Scanner(System.in);
         String answer = "yes";
         do {
-            try {
-                if ("yes".equals(answer)) {
-                    System.out.print("Введите математическое выражение: ");
-                    printResult(Calculator.calculate(scanner.nextLine()));
-                    throw new NumberFormatException();
-                }
-            } catch (NumberFormatException e) {
+            if ("yes".equals(answer)) {
                 System.out.print("Введите математическое выражение: ");
                 printResult(Calculator.calculate(scanner.nextLine()));
             }

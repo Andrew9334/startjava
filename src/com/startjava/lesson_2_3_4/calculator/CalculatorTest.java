@@ -13,7 +13,7 @@ public class CalculatorTest {
                 try {
                     printResult(Calculator.calculate(scanner.nextLine()));
                 } catch (NumberFormatException e) {
-                    System.out.println("Введено не натуральное число");
+                    System.out.println("Введено ненатуральное число");
                 }
                 System.out.println("Хотите продолжить вычисления? [yes/no]");
                 answer = scanner.nextLine();

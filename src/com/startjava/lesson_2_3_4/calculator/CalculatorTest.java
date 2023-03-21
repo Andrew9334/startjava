@@ -8,8 +8,8 @@ public class CalculatorTest {
         Scanner scanner = new Scanner(System.in);
         String answer = "yes";
         do {
-            System.out.print("Введите математическое выражение: ");
             if ("yes".equals(answer)) {
+                System.out.print("Введите математическое выражение: ");
                 try {
                     printResult(Calculator.calculate(scanner.nextLine()));
                 } catch (NumberFormatException e) {

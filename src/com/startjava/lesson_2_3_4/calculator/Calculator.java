@@ -1,5 +1,7 @@
 package com.startjava.lesson_2_3_4.calculator;
 
+import jdk.swing.interop.SwingInterOpUtils;
+
 public class Calculator {
     private static int num1;
     private static int num2;
@@ -7,6 +9,9 @@ public class Calculator {
 
     public static double calculate(String expression) {
         parseExpression(expression);
+        if (num1 < 0 || num2 < 0) {
+            throw new NumberFormatException();
+        }
         return switch (sign) {
             case '+' -> Math.addExact(num1, num2);
             case '-' -> Math.subtractExact(num1, num2);
@@ -16,18 +21,15 @@ public class Calculator {
             case '%' -> Math.floorMod(num1, num2);
             default -> {
                 System.out.println("Данный знак не поддерживается");
-                yield  0;
+                yield 0;
             }
         };
     }
 
     private static void parseExpression(String expression) {
         String[] partsExpression = expression.split(" ");
-        num1 = Integer.parseInt(partsExpression[0]);
-        sign = partsExpression[1].charAt(0);
-        num2 = Integer.parseInt(partsExpression[2]);
-        if ((num1 < 0 || num2 < 0)) {
-            throw new NumberFormatException();
-        }
+            num1 = Integer.parseInt(partsExpression[0]);
+            sign = partsExpression[1].charAt(0);
+            num2 = Integer.parseInt(partsExpression[2]);
     }
 }

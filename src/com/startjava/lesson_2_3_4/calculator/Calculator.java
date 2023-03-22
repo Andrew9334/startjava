@@ -9,7 +9,7 @@ public class Calculator {
 
     public static double calculate(String expression) {
         parseExpression(expression);
-        if (num1 < 0 || num2 < 0) {
+        if (num1 <= 0 || num2 <= 0) {
             throw new NumberFormatException();
         }
         return switch (sign) {
@@ -28,8 +28,8 @@ public class Calculator {
 
     private static void parseExpression(String expression) {
         String[] partsExpression = expression.split(" ");
-            num1 = Integer.parseInt(partsExpression[0]);
-            sign = partsExpression[1].charAt(0);
-            num2 = Integer.parseInt(partsExpression[2]);
+        num1 = Integer.parseInt(partsExpression[0]);
+        sign = partsExpression[1].charAt(0);
+        num2 = Integer.parseInt(partsExpression[2]);
     }
 }
